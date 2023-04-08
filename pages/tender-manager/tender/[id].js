@@ -1,4 +1,5 @@
 import MyLayout from "@/pages/tender-manager/component/layout";
+import TenderLayout from "./tenderdata";
 import axios from "axios";
 import { useRouter } from "next/router";
 
@@ -7,17 +8,7 @@ export default function UserProfile({ data }) {
   return (
     <>
       <MyLayout title="Tenders" />
-      <h3>Tendername: {data.Tendername}</h3>
-      <h3>Projectlocation: {data.Projectlocation}</h3>
-      <h3>Tenderbudget: {data.Tenderbudget}</h3>
-      <h3>Tenderbudget: {data.Tenderbudget}</h3>
-      <h3>ProjectStartDate: {data.ProjectStartDate}</h3>
-      <h3>ProjectCmplttDate: {data.ProjectCmplttDate}</h3>
-      <h3>Deadline: {data.Deadline}</h3>
-      <h3>Cmpltpercentege: {data.Cmpltpercentege}</h3>
-      <h3>TendermanagerId: {data.TendermanagerId}</h3>
-      <h3>AgencyId: {data.AgencyId}</h3>
-      <h3>Status: {data.Status}</h3>
+      <TenderLayout data={data} />
 
       <button type="button" onClick={() => router.back()}>
         Click here to go back

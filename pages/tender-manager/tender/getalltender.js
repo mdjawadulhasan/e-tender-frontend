@@ -10,7 +10,13 @@ export default function GetUsers({ data }) {
       <ul>
         {data.map((item) => (
           <li key={item.id}>
-            <Link href={"/tender-manager/tender/" + item.id}>{item.Tendername}</Link>
+            <Link href={"/tender-manager/tender/" + item.id}>
+              {item.Tendername}
+            </Link>{" "}
+            ||
+            <Link href={"/tender-manager/tender/auction/bids/" + item.id}>
+              View auction Bids 
+            </Link>
           </li>
         ))}
       </ul>

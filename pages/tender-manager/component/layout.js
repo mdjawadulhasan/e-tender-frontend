@@ -8,16 +8,20 @@ export default function MyLayout(props) {
       <Header title={props.title} />
       <nav>
         <Link href="/tender-manager"> Home</Link>
+        <br></br>
         <Link href="/tender-manager/profile"> Profile</Link>
-        <Link href="/tender-manager/getauctionbids"> Auction Bids</Link>
+        <br></br>
+        <Link href="/tender-manager/searchtenders"> Search Tenders</Link>
+        <br></br>
         <Link href="/tender-manager/tender/getalltender"> View Tenders</Link>
+        <br></br>
         <Link href="/tender-manager/tender/available"> Available Tenders</Link>
+        <br></br>
         <Link href="/tender-manager/tender/assigned"> Assigned Tenders</Link>
+        <br></br>
         <Link href="/tender-manager/tender/blocked"> Blocked Tenders</Link>
+        <br></br>
         <Link href="/tender-manager/tender/completed"> Completed Tenders</Link>
-
-        {/* <Link href="/tender-manager/signup"> Sign Up</Link>
-        <Link href="/tender-manager/signin"> Sign in</Link> */}
       </nav>
 
       <Image src="/logo.png" alt="me" width="64" height="64" />
