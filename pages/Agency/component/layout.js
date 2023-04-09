@@ -7,12 +7,44 @@ export default function MyLayout(props) {
     <>
       <Header title={props.title} />
       <nav>
-        <Link href="/Agency"> Home</Link>
-        <br></br>
-        <Link href="/Agency/profile"> Profile</Link>
-        <br></br>
-        <Link href="/Agency/tender/getalltender"> Tenders</Link>
-        <br></br>
+        <Link href="/Agency">
+          <h3>Home</h3>
+        </Link>
+        <Link href="/Agency/profile">
+          {" "}
+          <h3>Profile</h3>{" "}
+        </Link>
+        <Link href="/Agency/tender/getalltender">
+          <h3>Tenders </h3>
+        </Link>
+
+        <Link href="/Agency/Budget/viewBudget">
+          <h3>View Budget </h3>{" "}
+        </Link>
+
+        <Link href="/Agency/viewBid">
+          <h3>View Bid </h3>{" "}
+        </Link>
+
+        <Link href="/Agency/Budget/getallBudget">
+          {" "}
+          <h3>View All Budget </h3>
+        </Link>
+
+        <Link href="/Agency/feedback/">
+          {" "}
+          <h3>Feed Back </h3>
+        </Link>
+
+        <Link href="/Agency/update/">
+          {" "}
+          <h3>Update </h3>
+        </Link>
+
+        <Link href="/Agency/PreviousProject/">
+          {" "}
+          <h3>Previous Project </h3>
+        </Link>
       </nav>
 
       <Image src="/logo.png" alt="me" width="64" height="64" />
@@ -25,9 +57,7 @@ export default function MyLayout(props) {
           width: "100%",
           textAlign: "center",
         }}
-      >
-        E-Tender © Copyright 2023
-      </div>
+      ></div>
     </>
   );
 }
