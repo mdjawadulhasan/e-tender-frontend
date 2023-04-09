@@ -1,5 +1,6 @@
-import Image from "next/image";
 import MyLayout from "@/pages/tender-manager/component/layout";
+import Image from "next/image";
+import UserLayout from "./component/userdata";
 import axios from "axios";
 
 export default function GetUsers({ data }) {
@@ -7,19 +8,7 @@ export default function GetUsers({ data }) {
     <>
       <MyLayout title="Profile" />
       <h1>User Profile</h1>
-      <ul>
-        <h3>Name : {data.name}</h3>
-        <h3>Email : {data.email}</h3>
-        <Image
-          src={
-            "http:/localhost:3000/TenderManager/getimage/" + data.ImgfileName
-          }
-          alt="me"
-          width="150"
-          height="150"
-        />
-
-      </ul>
+      <UserLayout data={data} />
     </>
   );
 }
