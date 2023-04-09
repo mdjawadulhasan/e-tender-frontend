@@ -11,20 +11,11 @@ export default function MyLayout(props) {
         <br></br>
         <Link href="/Agency/profile"> Profile</Link>
         <br></br>
-        <Link href="/tender-manager/searchtenders"> Search Tenders</Link>
+        <Link href="/Agency/tender/getalltender"> Tenders</Link>
         <br></br>
-        <Link href="/tender-manager/tender/getalltender"> View Tenders</Link>
-        <br></br>
-        <Link href="/tender-manager/tender/available"> Available Tenders</Link>
-        <br></br>
-        <Link href="/tender-manager/tender/assigned"> Assigned Tenders</Link>
-        <br></br>
-        <Link href="/tender-manager/tender/blocked"> Blocked Tenders</Link>
-        <br></br>
-        <Link href="/tender-manager/tender/completed"> Completed Tenders</Link>
       </nav>
 
-      <Image src="/Agency2.png" alt="me" width="64" height="64" />
+      <Image src="/logo.png" alt="me" width="64" height="64" />
 
       <main></main>
       <div

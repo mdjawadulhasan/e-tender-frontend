@@ -6,7 +6,7 @@ export default function MyHeader(props) {
         <>
         <Head>
             <title>{props.title}</title>
-            <link rel="icon" type="image/x-icon" href="/Agency2.png"></link>
+            <link rel="icon" type="image/x-icon" href="/logo.png"></link>
         </Head>
         </>
     )
