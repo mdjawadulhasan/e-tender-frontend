@@ -1,9 +1,10 @@
-import React from "react";
-
-export default function index() {
-  return <div>
-    <h1>
-    This is Tender Agency  Home Page 
-    </h1>
-  </div>;
+import Link from "next/link";
+import MyLayout from "@/pages/Agency/component/layout";
+export default function AgencyDashboard() {
+  return (
+    <>
+      <MyLayout title="Agency Dashboard" />
+      <h1>Agency Dashboard</h1>
+    </>
+  );
 }
