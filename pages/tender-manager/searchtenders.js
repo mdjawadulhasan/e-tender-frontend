@@ -29,10 +29,10 @@ export default function MyPage({ data }) {
         <button type="submit">Fetch Data</button>
       </form>
       {data.length === 0 ? (
-          <p>No data found</p>
-        ) : (
-          data.map((tender) => <TenderLayout key={tender.id} data={tender} />)
-        )}
+        <p>No data found</p>
+      ) : (
+        data.map((tender) => <TenderLayout key={tender.id} data={tender} />)
+      )}
     </>
   );
 }
@@ -44,8 +44,6 @@ export async function getServerSideProps({ query }) {
       "http://localhost:3000/tenders/available/search-by-name/" + inputValue
     );
     const data = await response.data;
-    console.log(data);
-  
 
     return {
       props: {
