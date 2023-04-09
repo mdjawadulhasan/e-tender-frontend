@@ -1,5 +1,5 @@
 import Link from "next/link";
-import MyLayout from "@/pages/tender-manager/component/layout";
+import MyLayout from "@/pages/admin/component/layout";
 import axios from "axios";
 
 export default function GetUsers({ data }) {
@@ -10,13 +10,11 @@ export default function GetUsers({ data }) {
       <ul>
         {data.map((item) => (
           <li key={item.id}>
-            <Link href={"/tender-manager/tender/" + item.id}>
+            <Link href={"/admin/tender/" + item.id}>
               {item.Tendername}
             </Link>{" "}
             ||
-            <Link href={"/tender-manager/tender/auction/bids/" + item.id}>
-              View auction Bids
-            </Link>
+            <Link href={""}>Modify</Link>
           </li>
         ))}
       </ul>
