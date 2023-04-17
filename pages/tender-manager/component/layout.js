@@ -24,7 +24,7 @@ export default function MyLayout(props) {
         <Link href="/tender-manager/tender/completed"> Completed Tenders</Link>
       </nav>
 
-      <Image src="/logo.png" alt="me" width="64" height="64" />
+      <Image src="/headerlogo.png" alt="me" width="164" height="100" />
 
       <main></main>
       <div
