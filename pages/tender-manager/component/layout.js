@@ -3,9 +3,11 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function MyLayout(props) {
+  const email = sessionStorage.getItem('email');
   return (
     <>
       <Header title={props.title} />
+      <p>Email: {email}</p>
       <nav>
         <Link href="/tender-manager"> Home</Link>
         <br></br>

@@ -8,6 +8,7 @@ export default function GetUsers({ data }) {
     <>
       <MyLayout title="Profile" />
       <h1>User Profile</h1>
+      
       <UserLayout data={data} />
     </>
   );
@@ -15,7 +16,8 @@ export default function GetUsers({ data }) {
 
 export async function getServerSideProps() {
   const response = await axios.get(
-    "http://localhost:3000/TenderManager/viewprofile/1"
+    
+    "http://localhost:3000/TenderManager/viewprofile/21"
   );
   const data = await response.data;
   return { props: { data } };

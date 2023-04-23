@@ -49,8 +49,7 @@ export default function SignUp() {
 
     }
     catch (error) {
-      console.log(error.response.data.message);
-
+      
       setSuccess('Signup unsuccessfull ' + error.response.data.message);
 
     }
