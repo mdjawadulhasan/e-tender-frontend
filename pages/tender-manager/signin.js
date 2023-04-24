@@ -29,29 +29,37 @@ export default function SignIn() {
     }
   }
 
-
-
   return (
     <>
       <Head>
         <title>Sign In</title>
         <link rel="icon" type="image/x-icon" href="/logo.png"></link>
       </Head>
+      <div className="flex justify-center items-center mt-12">
+        <img src="/logo.png" alt="Logo" className="w-16 h-16 mr-2" />
+        <h2 className="text-2xl font-bold">Welcome To E-Tender</h2>
+      </div>
 
-      <form onSubmit={handleSubmit}>
-        <label>
-          Email
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-        </label>
-        <br />
-        <label>
-          Password
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-        </label>
-        <br />
-        <button type="submit">Sign In</button>
-        {error && <p >{error}</p>}
-
+      
+      <form onSubmit={handleSubmit} className="max-w-sm mx-auto mt-12">
+        <div className="mb-4">
+          <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
+            Email
+          </label>
+          <input className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        </div>
+        <div className="mb-4">
+          <label className="block text-gray-700 font-bold mb-2" htmlFor="password">
+            Password
+          </label>
+          <input className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        </div>
+        <div className="flex items-center justify-between">
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+            Sign In
+          </button>
+        </div>
+        {error && <p className="text-red-500 mt-4">{error}</p>}
       </form>
     </>
   )
