@@ -16,7 +16,7 @@ export default function Validate() {
 
     try {
       const response = await axios.post('http://localhost:3000/TenderManager/validate', { otp,semail })
-      console.log("result: " + response.data)
+
       sessionStorage.setItem('email', response.data);
       router.push("/tender-manager/profile");
 

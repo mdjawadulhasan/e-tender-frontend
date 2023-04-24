@@ -1,13 +1,16 @@
 import Header from "./header";
 import Link from "next/link";
 import Image from "next/image";
+import SessionCheck from "./sessioncheck";
+
 
 export default function MyLayout(props) {
-  const email = sessionStorage.getItem('email');
+
   return (
     <>
+      <SessionCheck />
       <Header title={props.title} />
-      <p>Email: {email}</p>
+     
       <nav>
         <Link href="/tender-manager"> Home</Link>
         <br></br>
