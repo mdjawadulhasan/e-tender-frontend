@@ -148,7 +148,7 @@ export default function SignUp() {
           onClick={() => router.push('/tender-manager/signin')}
           className="mt-4 block underline hover:text-blue-500"
         >
-          Already Have an Account? Click here to Login
+          Already Have an Account? Click here to Sign In
         </button>
       </div>
 
