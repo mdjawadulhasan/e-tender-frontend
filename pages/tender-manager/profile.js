@@ -1,13 +1,20 @@
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import MyLayout from '@/pages/tender-manager/component/layout';
 import UserLayout from './component/userdata';
 import axios from 'axios';
 
 export default function GetUsers() {
   const [userData, setUserData] = useState(null);
-  const email = sessionStorage.getItem('email');
+  const router = useRouter();
 
   useEffect(() => {
+    const email = sessionStorage.getItem('email');
+    if (!email) {
+      router.push('/tender-manager/signin');
+      return;
+    }
+
     const fetchData = async () => {
       try {
         const res = await axios.get(`http://localhost:3000/TenderManager/viewprofilebyemail/${email}`);
@@ -18,7 +25,7 @@ export default function GetUsers() {
     };
 
     fetchData();
-  }, [email]);
+  }, [router]);
 
   return (
     <div className="bg-gray-50 min-h-screen">
