@@ -23,6 +23,7 @@ export default function Validate() {
 
     } catch (error) {
       setError("Invalid OTP")
+      router.push("/tender-manager/sigin");
     }
   }
 
