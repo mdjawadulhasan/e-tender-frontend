@@ -5,12 +5,12 @@ import axios from 'axios';
 
 export default function GetUsers() {
   const [userData, setUserData] = useState(null);
-  //const email = sessionStorage.getItem('email');
-const email="l";
+  const email = sessionStorage.getItem('email');
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/TenderManager/viewprofile/21`);
+        const res = await axios.get(`http://localhost:3000/TenderManager/viewprofilebyemail/${email}`);
         setUserData(res.data);
       } catch (error) {
         console.error(error);
