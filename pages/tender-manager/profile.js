@@ -1,24 +1,31 @@
-import MyLayout from "@/pages/tender-manager/component/layout";
-import Image from "next/image";
-import UserLayout from "./component/userdata";
-import axios from "axios";
+import { useState, useEffect } from 'react';
+import MyLayout from '@/pages/tender-manager/component/layout';
+import UserLayout from './component/userdata';
+import axios from 'axios';
 
-export default function GetUsers({ data }) {
+export default function GetUsers() {
+  const [userData, setUserData] = useState(null);
+  const email = sessionStorage.getItem('email');
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(`http://localhost:3000/TenderManager/viewprofilebyemail/${email}`);
+        setUserData(res.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, [email]);
+
   return (
     <>
       <MyLayout title="Profile" />
       <h1>User Profile</h1>
-      
-      <UserLayout data={data} />
+      {userData ? <UserLayout data={userData} /> : <p>Loading...</p>}
+     
     </>
   );
-}
-
-export async function getServerSideProps() {
-  const response = await axios.get(
-    
-    "http://localhost:3000/TenderManager/viewprofile/21"
-  );
-  const data = await response.data;
-  return { props: { data } };
 }
