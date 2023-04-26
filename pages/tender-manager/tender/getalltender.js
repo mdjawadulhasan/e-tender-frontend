@@ -40,6 +40,5 @@ export default function GetUsers({ data }) {
 export async function getServerSideProps() {
   const response = await axios.get("http://localhost:3000/tenders/all");
   const data = await response.data;
-  console.log(data)
   return { props: { data } };
 }
