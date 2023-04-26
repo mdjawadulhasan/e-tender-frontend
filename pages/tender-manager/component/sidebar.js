@@ -18,37 +18,37 @@ export default function SideLayout(props) {
 
                         <li>
                             <a href="/tender-manager/tender/searchtenders" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
-                                <img src="/search-svgrepo-com.svg" alt="search icon" class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black" />
+                                <img src="/search.png" alt="search icon" class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black" />
                                 <span class="ml-3">Search</span>
                             </a>
                         </li>
                         <li>
                             <a href="/tender-manager/tender/getalltender" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
-                                <img src="/showall.svg" alt="search icon" class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black" />
-                                <span class="ml-3">View</span>
+                                <img src="/all.png" alt="search icon" class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black" />
+                                <span class="ml-3">View All </span>
                             </a>
                         </li>
                         <li>
                             <a href="/tender-manager/tender/available" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
-                                <img src="/available-calendar-date-svgrepo-com.svg" alt="search icon" class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black" />
+                                <img src="/avl.png" alt="search icon" class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black" />
                                 <span class="ml-3">Available</span>
                             </a>
                         </li>
                         <li>
                             <a href="/tender-manager/tender/assigned" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
-                                <img src="/assigned-resource-svgrepo-com.svg" alt="search icon" class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black" />
+                                <img src="/asgnd.png" alt="search icon" class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black" />
                                 <span class="ml-3">Assigned</span>
                             </a>
                         </li>
                         <li>
                             <a href="/tender-manager/tender/blocked" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
-                                <img src="/blocked-banned-svgrepo-com.svg" alt="search icon" class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black" />
+                                <img src="/blocked.png" alt="search icon" class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black" />
                                 <span class="ml-3">Blocked</span>
                             </a>
                         </li>
                         <li>
                             <a href="/tender-manager/tender/completed" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
-                                <img src="/done-1476-svgrepo-com.svg" alt="search icon" class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black" />
+                                <img src="/cmplt.png" alt="search icon" class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black" />
                                 <span class="ml-3">Completed</span>
                             </a>
                         </li>
