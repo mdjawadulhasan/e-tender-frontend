@@ -1,44 +1,21 @@
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
+import { useAuth } from './useAuth';
 import MyLayout from '@/pages/tender-manager/component/layout';
 import UserLayout from './component/userdata';
-import axios from 'axios';
+import router from 'next/router';
+import SideLayout from '@/pages/tender-manager/component/sidebar';
 
 export default function GetUsers() {
-  const [userData, setUserData] = useState(null);
-  const router = useRouter();
-
-  useEffect(() => {
-
-    
-    const email = sessionStorage.getItem('email');
-    if (!email) {
-      router.push('/tender-manager/signin');
-      return;
-    }
-
-    const fetchData = async () => {
-      try {
-        const res = await axios.get(`http://localhost:3000/TenderManager/viewprofilebyemail/${email}`);
-        setUserData(res.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchData();
-  }, [router]);
+  const userData = useAuth();
+ 
 
   const handleUpdateClick = () => {
-
     router.push(`/tender-manager/update`);
-
   };
 
   return (
-    
     <div className="bg-white-50 min-h-screen">
       <MyLayout title="Profile" />
+      
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-4">My Profile</h1>
         <div className="flex justify-end mb-4">
@@ -52,8 +29,6 @@ export default function GetUsers() {
           Update
         </button>
       </div>
-
-
     </div>
   );
 }

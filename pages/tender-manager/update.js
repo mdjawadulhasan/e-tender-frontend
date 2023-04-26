@@ -3,32 +3,17 @@ import MyLayout from "@/pages/tender-manager/component/layout";
 import { useRouter } from 'next/router'
 import { useForm } from 'react-hook-form';
 import axios from "axios"
+import { useAuth } from "./useAuth";
 
 
 export default function UpdateProfile() {
+
+    
     const router = useRouter();
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
-    const [user, setUser] = useState(null);
-
-    useEffect(() => {
-        const email = sessionStorage.getItem('email');
-        if (!email) {
-            router.push('/tender-manager/signin');
-            return;
-        }
-
-        const fetchUser = async () => {
-            try {
-                const response = await axios.get(`http://localhost:3000/TenderManager/viewprofilebyemail/${email}`);
-                setUser(response.data);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-
-        fetchUser();
-    }, []);
+    const user = useAuth();
+   
 
     const [success, setSuccess] = useState('')
     const onSubmit = async (data) => {

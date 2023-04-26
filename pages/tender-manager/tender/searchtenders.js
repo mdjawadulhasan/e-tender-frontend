@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
 import MyLayout from "@/pages/tender-manager/component/layout";
-import TenderLayout from "./tender/tenderdata";
-
+import TenderLayout from "./tenderdata";
+import SideLayout from "../component/sidebar";
 export default function MyPage({ data }) {
   const [inputValue, setInputValue] = useState();
   const router = useRouter();
@@ -24,6 +24,7 @@ export default function MyPage({ data }) {
   return (
     <>
       <MyLayout />
+      <SideLayout/>
       <form onSubmit={handleFormSubmit}>
         <input type="text" value={inputValue} onChange={handleInputChange} />
         <button type="submit">Fetch Data</button>
