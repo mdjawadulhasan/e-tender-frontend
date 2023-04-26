@@ -10,7 +10,7 @@ export default function SideLayout(props) {
                     <ul class="space-y-2 font-medium">
                     <li>
                             <a href="/tender-manager/tender/create" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
-                                <img src="/plus-add-create-new-cross-svgrepo-com.svg" alt="search icon" class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black" />
+                                <img src="/create-svgrepo-com.png" alt="search icon" class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black" />
                                 <span class="ml-3">Create</span>
                             </a>
                         </li>
