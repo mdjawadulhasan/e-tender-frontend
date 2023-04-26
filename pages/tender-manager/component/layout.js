@@ -9,7 +9,7 @@ export default function MyLayout(props) {
       <SessionCheck />
       <Header title={props.title} />
 
-      <nav class="flex items-center justify-between flex-wrap bg-white text-black p-2 shadow-md">
+      <nav class="fixed top-0 z-10 flex items-center justify-between flex-wrap bg-white text-black p-2 shadow-md w-full">
 
 
         <div className="flex items-center flex-shrink-0 mr-6">

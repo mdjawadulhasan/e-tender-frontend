@@ -36,7 +36,7 @@ export default function Validate() {
 
       <div className="min-h-screen bg-gray-100 flex justify-center items-center">
         <form onSubmit={handleSubmit} className="bg-white p-10 rounded-md shadow-lg">
-          <h6 className="text-3sl font-bold mb-1">6 Digit OTP have been sent to your email.</h6>
+          <h6 className="text-3sl font-bold mb-1">5 Digit OTP have been sent to your email.</h6>
           <br></br>
           <div className="mb-5">
             <label htmlFor="otp" className="block font-medium text-gray-700 mb-2">OTP</label>
