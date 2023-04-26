@@ -13,9 +13,9 @@ export default function GetUsers() {
   };
 
   return (
-    <div className="bg-white-50 min-h-screen">
+    <div className="bg-white-50 min-h-screen mt-8" >
       <MyLayout title="Profile" />
-      
+     
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-4">My Profile</h1>
         <div className="flex justify-end mb-4">
