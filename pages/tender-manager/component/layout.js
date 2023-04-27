@@ -2,8 +2,24 @@ import Header from "./header";
 import Link from "next/link";
 import Image from "next/image";
 import SessionCheck from "./sessioncheck";
+import axios from "axios";
+import { useRouter } from 'next/router';
 
 export default function MyLayout(props) {
+  const router = useRouter(); 
+  const handleSignOut = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await axios.get('http://localhost:3000/TenderManager/signout')
+      console.log(response.data)
+      sessionStorage.removeItem('email');
+      router.push('/tender-manager/signin');
+    } catch (error) {
+      console.error(error)
+    }
+
+  };
+
   return (
     <>
       <SessionCheck />
@@ -26,9 +42,19 @@ export default function MyLayout(props) {
             <Link href="/tender-manager/tender/getalltender" className="block mt-4 lg:inline-block lg:mt-0 hover:bg-gray-100 mr-4">
               Tenders
             </Link>
-            
+            <Link href="/tender-manager/auction/getalltender" className="block mt-4 lg:inline-block lg:mt-0 hover:bg-gray-100 mr-4">
+              Auction
+            </Link>
+
           </div>
         </div>
+
+
+        <button onClick={handleSignOut}>
+          <img src="/logout.png" alt="logout icon" class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black" />
+        </button>
+
+
       </nav>
 
 
