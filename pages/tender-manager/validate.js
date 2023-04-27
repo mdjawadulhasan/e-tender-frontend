@@ -12,7 +12,6 @@ export default function Validate() {
   const handleSubmit = async (event) => {
 
     const semail = sessionStorage.getItem('tempemail');
-    console.log(semail);
     event.preventDefault()
 
     try {

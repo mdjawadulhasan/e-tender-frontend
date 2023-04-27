@@ -18,16 +18,11 @@ export default function SideLayout(props) {
 
                         <li>
                             <a href="/tender-manager/tender/searchtenders" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
-                                <img src="/search.png" alt="search icon" class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black" />
-                                <span class="ml-3">Search</span>
+                            <img src="/all.png" alt="search icon" class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black" />
+                                <span class="ml-3">View All</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="/tender-manager/tender/getalltender" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
-                                <img src="/all.png" alt="search icon" class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black" />
-                                <span class="ml-3">View All </span>
-                            </a>
-                        </li>
+                        
                         <li>
                             <a href="/tender-manager/tender/available" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
                                 <img src="/avl.png" alt="search icon" class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black" />

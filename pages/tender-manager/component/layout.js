@@ -42,7 +42,7 @@ export default function MyLayout(props) {
             <Link href="/tender-manager/tender/getalltender" className="block mt-4 lg:inline-block lg:mt-0 hover:bg-gray-100 mr-4">
               Tenders
             </Link>
-            <Link href="/tender-manager/auction/getalltender" className="block mt-4 lg:inline-block lg:mt-0 hover:bg-gray-100 mr-4">
+            <Link href="/tender-manager/tender/auction" className="block mt-4 lg:inline-block lg:mt-0 hover:bg-gray-100 mr-4">
               Auction
             </Link>
 
