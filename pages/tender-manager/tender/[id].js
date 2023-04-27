@@ -19,7 +19,7 @@ export default function TenderView({ data }) {
   const [success, setSuccess] = useState('')
   const onSubmit = async (data) => {
 
-    console.log("See: ",data.id)
+    console.log(data);
     const form = {
       Tendername: data.name,
       Projectlocation: data.projectLocation,
@@ -29,11 +29,11 @@ export default function TenderView({ data }) {
       ProjectStartDate: data.projectStartDate,
       ProjectCmplttDate: data.projectCmplttDate,
       Deadline: data.deadline,
-      Cmpltpercentege: 0,
+      Cmpltpercentege: data.Cmpltpercentege,
       Tendermanager: user.id,
-      Agency: 0,
-      Status: 0,
-      id:data.id,
+      Agency: data.Agency ? data.Agency : null,
+      Status: data.Status,
+      id: data.id,
 
     };
 
@@ -51,7 +51,7 @@ export default function TenderView({ data }) {
 
   return (
     <>
-      <MyLayout title="Create Tender" />
+      <MyLayout title="View Tender" />
       <SideLayout />
       {success}
 
@@ -60,16 +60,39 @@ export default function TenderView({ data }) {
       <br></br>
       <br></br>  <br></br>
       <form onSubmit={handleSubmit(onSubmit)} className="max-w-sm mx-auto mt-1">
-       
 
-      <input
-              type="hidden"
-              id="id"
-              className="w-full border border-gray-400 p-2 rounded-md"
-              {...register('id')}
-              defaultValue={data.id}
-            />
-        
+
+        <input
+          type="hidden"
+          id="id"
+          {...register('id')}
+          defaultValue={data.id}
+        />
+
+
+        <input
+          type="hidden"
+          id="Agency"
+          {...register('Agency')}
+          defaultValue={data.Agency}
+        />
+
+        <input
+          type="hidden"
+          id="Cmpltpercentege"
+          {...register('Cmpltpercentege')}
+          defaultValue={data.Cmpltpercentege}
+        />
+
+        <input
+          type="hidden"
+          id="Status"
+          {...register('Status')}
+          defaultValue={data.Status}
+        />
+
+        {/* -------------------------------- */}
+
         <div className="flex">
           <div className="w-1/2">
             <label htmlFor="name" className="block font-medium">Name</label>
