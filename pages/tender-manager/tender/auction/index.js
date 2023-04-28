@@ -15,7 +15,7 @@ export default function GetUsers({ data }) {
       return;
     }
     const response = await axios.get(
-      `http://localhost:3000/tenders/search-by-name/${searchTerm}`
+      `http://localhost:3000/tenders/available/search-by-name/${searchTerm}`
     );
     const data = await response.data;
     setSearchResults(data);
@@ -78,7 +78,7 @@ export default function GetUsers({ data }) {
 }
 
 export async function getServerSideProps() {
-  const response = await axios.get("http://localhost:3000/tenders/all");
+  const response = await axios.get("http://localhost:3000/tenders/Available");
   const data = await response.data;
   return { props: { data } };
 }
