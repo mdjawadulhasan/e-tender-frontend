@@ -2,6 +2,8 @@ import { useState } from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import Swal from 'sweetalert2'
+
 
 export default function Validate() {
 
@@ -21,8 +23,15 @@ export default function Validate() {
       router.push("/tender-manager/profile");
 
     } catch (error) {
-      setError("Invalid OTP")
-      router.push("/tender-manager/sigin");
+      Swal.fire({
+        icon: 'error',
+        title: 'Wrong OTP',
+        text: 'Check your Email!'
+      })
+      const response = await axios.get('http://localhost:3000/TenderManager/signout')
+      console.log(response.data)
+      sessionStorage.removeItem('email');
+      router.push('/tender-manager/signin');
     }
   }
 

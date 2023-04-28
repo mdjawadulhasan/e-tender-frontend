@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { useForm } from 'react-hook-form';
 import axios from "axios"
 import Head from 'next/head';
+import Swal from 'sweetalert2'
 
 export default function SignUp() {
   const router = useRouter();
@@ -45,13 +46,18 @@ export default function SignUp() {
       });
 
 
-      setSuccess('Signup successfull');
+    
+      Swal.fire(
+        'Signup successfull!',
+        'Go to Login Page!',
+        'success'
+      )
       reset();
 
     }
     catch (error) {
 
-      setSuccess('Signup unsuccessfull ' + error.response.data.message);
+      setSuccess('Signup unsuccessfull');
 
     }
 
