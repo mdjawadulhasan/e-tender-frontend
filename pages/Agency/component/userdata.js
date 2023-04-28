@@ -15,11 +15,11 @@ export default function UserLayout({ data }) {
           <div className="flex justify-center">
             <div className="mt-1 mb-4 w-28 h-28 rounded-full overflow-hidden">
               <Image
-                className="object-cover w-full h-full"
+                className="object-cover w-full h-full max-w-full"
                 src={`http:/localhost:3000/Agency/getimage/${data.ImgfileName}`}
-                alt="NOt Found "
-                width="150"
-                height="150"
+                alt="Not Found "
+                width="500"
+                height="500"
               />
             </div>
           </div>

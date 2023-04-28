@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import Head from "next/head";
+import SideLayout from "./component/sidebar";
 
 export default function SignUp() {
   const router = useRouter();
@@ -25,6 +26,7 @@ export default function SignUp() {
     return true;
   };
 
+  <br></br>;
   const [success, setSuccess] = useState("");
   const onSubmit = async (data) => {
     console.log(data);
@@ -51,13 +53,18 @@ export default function SignUp() {
       setSuccess("Signup unsuccessfull " + error.response.data.message);
     }
   };
-
+  <br></br>;
   return (
     <>
       {/* <SessionCheck /> */}
-
+      {/* <SideLayout /> */}
+      <MyLayout />
+      <br></br>
+      <br></br>
+      <br></br>
       <Head>
-        <title>Sign In</title>
+        <br></br>
+        <title>Sign Up</title>
         <link rel="icon" type="image/x-icon" href="/logo.png"></link>
       </Head>
       <div className="flex justify-center items-center mt-12">
