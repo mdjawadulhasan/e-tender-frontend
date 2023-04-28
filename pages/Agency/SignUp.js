@@ -32,7 +32,7 @@ export default function SignUp() {
     formData.append("AgencyName", data.AgencyName);
     formData.append("Email", data.Email);
     formData.append("password", data.password);
-    formData.append("myfile", data.file);
+    formData.append("file", data.file[0]);
     console.log(formData);
     try {
       const response = await axios.post(
@@ -126,18 +126,19 @@ export default function SignUp() {
         </div>
 
         <div>
-          <label htmlFor="myfile" className="block font-medium">
+          <label htmlFor="file" className="block font-medium">
             File
           </label>
           <input
             type="file"
-            id="myfile"
+            id="file"
             className="w-full"
-            {...register("myfile", { required: true, validate: validateFile })}
+            {...register("file", { required: true, validate: validateFile })}
           />
-          {errors.myfile && (
+          {errors.file && (
             <p className="text-red-500">
-              {errors.myfile.type === "required"
+              2
+              {errors.file.type === "required"
                 ? "File is required"
                 : "Invalid file"}
             </p>

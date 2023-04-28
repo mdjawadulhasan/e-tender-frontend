@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 export default function UserLayout({ data }) {
+  console.log(data);
   return (
     <div className="bg-white shadow overflow-hidden sm:rounded-lg mb-8">
       <div className="px-4 py-5 sm:px-6">
@@ -16,7 +17,7 @@ export default function UserLayout({ data }) {
               <Image
                 className="object-cover w-full h-full"
                 src={`http:/localhost:3000/Agency/getimage/${data.ImgfileName}`}
-                alt="me"
+                alt="NOt Found "
                 width="150"
                 height="150"
               />
