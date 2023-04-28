@@ -3,11 +3,12 @@
 import Link from "next/link";
 import axios from "axios";
 import MyLayout from "@/pages/tender-manager/component/layout";
-
+import SideLayout from "../component/sidebar";
 export default function AvlTenders({ data }) {
   return (
     <>
       <MyLayout title="Blocked Tenders" />
+      <SideLayout/>
       <h1>Blocked Tenders</h1>
       <ul>
         {data.map((item) => (

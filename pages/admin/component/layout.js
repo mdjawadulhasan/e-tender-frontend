@@ -22,7 +22,7 @@ export default function MyLayout(props) {
         <Link href="/admin/agency/agency"> View All Agency</Link>
       </nav>
 
-      <Image src="/logo.png" alt="me" width="64" height="64" />
+      <Image src="/headerlogo.png" alt="me" width="164" height="100" />
 
       <main></main>
       <div

@@ -1,11 +1,12 @@
 import Link from "next/link";
 import axios from "axios";
 import MyLayout from "@/pages/tender-manager/component/layout";
-
+import SideLayout from "../component/sidebar";
 export default function AvlTenders({ data }) {
   return (
     <>
       <MyLayout title="Available Tenders" />
+      <SideLayout/>
       <h1>Available Tenders</h1>
       <ul>
         {data.map((item) => (

@@ -1,63 +1,41 @@
 import Header from "./header";
 import Link from "next/link";
 import Image from "next/image";
+import SessionCheck from "./sessioncheck";
 
 export default function MyLayout(props) {
   return (
     <>
+      <SessionCheck />
       <Header title={props.title} />
-      <nav>
-        <Link href="/Agency">
-          <h3>Home</h3>
-        </Link>
-        <Link href="/Agency/profile">
-          {" "}
-          <h3>Profile</h3>{" "}
-        </Link>
-        <Link href="/Agency/tender/getalltender">
-          <h3>Tenders </h3>
-        </Link>
 
-        <Link href="/Agency/Budget/viewBudget">
-          <h3>View Budget </h3>{" "}
-        </Link>
+      <nav class="fixed top-0 z-10 flex items-center justify-between flex-wrap bg-white text-black p-2 shadow-md w-full">
 
-        <Link href="/Agency/viewBid">
-          <h3>View Bid </h3>{" "}
-        </Link>
 
-        <Link href="/Agency/Budget/getallBudget">
-          {" "}
-          <h3>View All Budget </h3>
-        </Link>
-
-        <Link href="/Agency/feedback/">
-          {" "}
-          <h3>Feed Back </h3>
-        </Link>
-
-        <Link href="/Agency/update/">
-          {" "}
-          <h3>Update </h3>
-        </Link>
-
-        <Link href="/Agency/PreviousProject/">
-          {" "}
-          <h3>Previous Project </h3>
-        </Link>
+        <div className="flex items-center flex-shrink-0 mr-6">
+          <Image src="/headerlogo.png" alt="me" width="164" height="100" />
+        </div>
+        <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto" >
+          <div className="text-sm lg:flex-grow" >
+            {/* <Link href="/tender-manager" className="block mt-4 lg:inline-block lg:mt-0 hover:bg-gray-100 mr-4" > */}
+              {/* Home */}
+            {/* </Link> */}
+            {/* <Link href="/tender-manager/profile" className="block mt-4 lg:inline-block lg:mt-0 hover:bg-gray-100 mr-4"> */}
+              {/* Profile */}
+            {/* </Link> */}
+            {/* <Link href="/tender-manager/tender/getalltender" className="block mt-4 lg:inline-block lg:mt-0 hover:bg-gray-100 mr-4"> */}
+              {/* Tenders */}
+            {/* </Link> */}
+            
+          </div>
+        </div>
       </nav>
 
-      <Image src="/logo.png" alt="me" width="64" height="64" />
 
-      <main></main>
-      <div
-        style={{
-          position: "absolute",
-          bottom: 0,
-          width: "100%",
-          textAlign: "center",
-        }}
-      ></div>
+
+      <div className="fixed bottom-0 w-full bg-white text-black text-center shadow-lg">
+        E-Tender © {new Date().getFullYear()}
+      </div>
     </>
   );
 }
