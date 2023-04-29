@@ -5,6 +5,12 @@ import SessionCheck from "./sessioncheck";
 import SideLayout from "./sidebar";
 
 export default function MyLayout(props) {
+
+
+
+
+
+
   return (
     <>
       <SessionCheck />
@@ -34,6 +40,13 @@ export default function MyLayout(props) {
             {/* </Link> */}
           </div>
         </div>
+
+        
+
+
+
+
+
       </nav>
 
       <div className="fixed bottom-0 w-full bg-white text-black text-center shadow-lg">

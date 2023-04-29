@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"; //hook
+import { useState, useEffect } from "react";
 import axios from "axios";
 import UserLayout from "./component/userdata";
 import SideLayout from "./component/sidebar";

@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-
 export default function UserLayout({ data }) {
   return (
     <div className="bg-white shadow-md rounded-lg px-10 py-6 mb-8 bg-green-400">
@@ -21,8 +20,6 @@ export default function UserLayout({ data }) {
                   height="500"
                 />
               </div>
-
-              
             </div>
           </div>
         </div>

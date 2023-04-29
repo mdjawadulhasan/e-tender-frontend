@@ -27,7 +27,7 @@ export default function SideLayout(props) {
 
             <li>
               <a
-                href="#"
+                href="Agency/searchAgency"
                 class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100"
               >
                 <img
