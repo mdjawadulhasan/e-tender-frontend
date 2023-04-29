@@ -69,7 +69,7 @@ export default function SignUp() {
       </Head>
       <div className="flex justify-center items-center mt-12">
         <img src="/logo.png" alt="Logo" className="w-16 h-16 mr-2" />
-        <h2 className="text-2xl font-bold">Welcome To Agencyr</h2>
+        <h2 className="text-2xl font-bold">Welcome To Agency</h2>
       </div>
       {success}
       <form

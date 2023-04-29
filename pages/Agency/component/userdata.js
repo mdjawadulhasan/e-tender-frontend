@@ -1,8 +1,9 @@
 import Image from "next/image";
 
+
 export default function UserLayout({ data }) {
   return (
-    <div className="bg-white shadow-md rounded-lg px-10 py-6 mb-8 bg-green-500">
+    <div className="bg-white shadow-md rounded-lg px-10 py-6 mb-8 bg-green-400">
       <h2 className="text-2xl font-bold text-gray-800">{data.AgencyName}</h2>
       <h4 className=" text-lg">{data.Email}</h4>
       {/* <h4 className=" text-lg">{data.Noprojectcomleted}</h4> */}
@@ -20,6 +21,8 @@ export default function UserLayout({ data }) {
                   height="500"
                 />
               </div>
+
+              
             </div>
           </div>
         </div>
