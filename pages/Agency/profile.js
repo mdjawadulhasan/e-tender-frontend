@@ -18,18 +18,13 @@ export default function GetUsers() {
     })
       .then((response) => response.json())
       .then((data) => {
-        // if (data.statusCode === 500) {
-        // Swal.fire({
-        // icon: "error",
-        // title: "Oops...",
-        // text: "Cannot delete due to dependency issues!",
-        // footer: "",
-        // });
-        // } else {
-        // Swal.fire("Deleted!", "Sign in to Access !", "success");
+        if (data.statusCode === 500) {
+          alert("Can't Delete ");
+        } else {
+          alert("Are You Sure Delete User");
 
-        router.push("/Agency/signin");
-        // }
+          router.push("/Agency/signin");
+        }
       })
       .catch((error) => console.log(error)); // handle the error
   };
@@ -42,6 +37,7 @@ export default function GetUsers() {
         <h1 className="text-3xl font-bold text-gray-900 mb-4">My Profile</h1>
         <div className="flex justify-end mb-4"></div>
         {userData ? <UserLayout data={userData} /> : <p>Loading...</p>}
+
         <button
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           onClick={handleUpdateClick}
@@ -50,7 +46,7 @@ export default function GetUsers() {
         </button>
 
         <button
-          className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+          className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-5"
           onClick={handleDeleteClick}
         >
           Delete
