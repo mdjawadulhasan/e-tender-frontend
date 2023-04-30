@@ -57,7 +57,7 @@ export default function SignUp() {
   return (
     <>
       {/* <SessionCheck /> */}
-      {/* <SideLayout /> */}
+      <SideLayout />
       <MyLayout />
       <br></br>
       <br></br>
