@@ -15,7 +15,7 @@ export default function GetUsers({ data }) {
       return;
     }
     const response = await axios.get(
-      `http://localhost:3000/tenders/search-by-name/${searchTerm}`
+      `http://localhost:3000/tenders/Blocked/search-by-name/${searchTerm}`
     );
     const data = await response.data;
     setSearchResults(data);
@@ -26,7 +26,7 @@ export default function GetUsers({ data }) {
 
   return (
     <>
-      <MyLayout title="Search Tenders" />
+      <MyLayout title="Blocked Tenders" />
       <SideLayout />
       <br />
       <br />
@@ -72,7 +72,7 @@ export default function GetUsers({ data }) {
 }
 
 export async function getServerSideProps() {
-  const response = await axios.get("http://localhost:3000/tenders/all");
+  const response = await axios.get("http://localhost:3000/tenders/Blocked");
   const data = await response.data;
   return { props: { data } };
 }
