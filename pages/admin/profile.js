@@ -8,7 +8,6 @@ import Swal from 'sweetalert2'
 
 export default function GetUsers() {
   const userData = useAuth();
-  console.log(userData);
 
   const handleUpdateClick = () => {
     router.push(`/admin/update`);
@@ -42,9 +41,6 @@ export default function GetUsers() {
 
   };
 
-
-
-
   return (
     <div className="bg-white-50 min-h-screen mt-8" >
       <MyLayout title="Profile" />
@@ -68,8 +64,6 @@ export default function GetUsers() {
           </button>
         </div>
       </div>
-
-
     </div>
   );
 }
