@@ -7,7 +7,7 @@ export default function SessionCheck () {
   useEffect(() => {
     const session = sessionStorage.getItem('email');
     if (!session) {
-      router.push('/tender-manager/signin');
+      router.push('/admin/signin');
     }
   }, []);
 

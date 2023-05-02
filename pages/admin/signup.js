@@ -34,6 +34,8 @@ export default function SignUp() {
     formData.append('name', data.name);
     formData.append('email', data.email);
     formData.append('password', data.password);
+    formData.append('address', data.address);
+    formData.append('area', data.area);
     formData.append('myfile', data.myfile[0]);
     console.log(formData);
     try {
@@ -88,6 +90,29 @@ export default function SignUp() {
           />
           {errors.name && <p className="text-red-500">Name is required</p>}
         </div>
+
+        <div>
+          <label htmlFor="area" className="block font-medium">Area</label>
+          <input
+            type="text"
+            id="area"
+            className="w-full border border-gray-400 p-2 rounded-md"
+            {...register('area', { required: true })}
+          />
+          {errors.area && <p className="text-red-500">Area is required</p>}
+        </div>
+
+        <div>
+          <label htmlFor="address" className="block font-medium">Address</label>
+          <input
+            type="text"
+            id="address"
+            className="w-full border border-gray-400 p-2 rounded-md"
+            {...register('address', { required: true })}
+          />
+          {errors.address && <p className="text-red-500">Address is required</p>}
+        </div>
+
         <div>
           <label htmlFor="email" className="block font-medium">Email</label>
           <input
