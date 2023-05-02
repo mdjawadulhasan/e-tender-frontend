@@ -24,6 +24,7 @@ export default function GetUsers() {
     }
     fetchData();
   }, [user]);
+  console.log(data);
 
   return (
     <>
@@ -37,7 +38,7 @@ export default function GetUsers() {
           <thead className="bg-gray-200">
             <tr>
               <th className="border py-3 px-8 text-lg">Tender Name</th>
-              <th className="border py-3 px-8 text-lg">Bid</th>
+              {/* <th className="border py-3 px-8 text-lg">Bid</th> */}
             </tr>
           </thead>
           <tbody>
@@ -47,13 +48,13 @@ export default function GetUsers() {
                   {item.Tendername}
                 </td>
 
-                <td className="border py-3 px-4 text-lg">
-                  <Link href={`/Agency/tender/${item.id}`}>
-                    <h1 className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition-colors duration-300 ease-in-out">
-                      Create
-                    </h1>
-                  </Link>
-                </td>
+                {/* <td className="border py-3 px-4 text-lg"> */}
+                {/* <Link href={`/Agency/tender/${item.id}`}> */}
+                {/* <h1 className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition-colors duration-300 ease-in-out"> */}
+                {/* Create */}
+                {/* </h1> */}
+                {/* </Link> */}
+                {/* </td> */}
               </tr>
             ))}
           </tbody>
