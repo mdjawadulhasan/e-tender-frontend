@@ -119,6 +119,10 @@ export default function TenderView({ data }) {
             </div>
           </form>
         </div>
+
+
+
+        
       </div>
     </>
   );
