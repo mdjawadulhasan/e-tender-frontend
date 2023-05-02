@@ -9,7 +9,7 @@ export default function SideLayout(props) {
                 <div class="h-full px-3 py-4 overflow-y-auto">
                     <ul class="space-y-2 font-medium">
                         <li>
-                            <a href="/tender-manager/tender/create" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
+                            <a href="/admin/magister/create" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
                                 <img src="/create-svgrepo-com.png" alt="search icon" class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black" />
                                 <span class="ml-3">Magister</span>
                             </a>
