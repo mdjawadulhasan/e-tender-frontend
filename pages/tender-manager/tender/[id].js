@@ -164,6 +164,7 @@ export default function TenderView({ data }) {
               className="w-full border border-gray-400 p-2 rounded-md"
               {...register('tenderBudget', { required: true })}
               defaultValue={data.Tenderbudget}
+              readOnly
             />
             {errors.tenderBudget && <p className="text-red-500">Tender Budget is required</p>}
           </div>

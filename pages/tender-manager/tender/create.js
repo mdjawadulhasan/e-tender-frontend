@@ -23,7 +23,7 @@ export default function Create() {
             Projectlocation: data.projectLocation,
             LocationXCoordinate: data.locationXCoordinate,
             LocationYCoordinate: data.locationYCoordinate,
-            Tenderbudget: data.tenderBudget,
+            Tenderbudget: 0,
             ProjectStartDate: data.projectStartDate,
             ProjectCmplttDate: data.projectCmplttDate,
             Deadline: data.deadline,
@@ -101,18 +101,9 @@ export default function Create() {
                     </div>
                 </div>
 
-                <div className="flex">
-                    <div className="w-1/2">
-                        <label htmlFor="tenderBudget" className="block font-medium">Tender Budget</label>
-                        <input
-                            type="number"
-                            id="tenderBudget"
-                            className="w-full border border-gray-400 p-2 rounded-md"
-                            {...register('tenderBudget', { required: true })}
-                        />
-                        {errors.tenderBudget && <p className="text-red-500">Tender Budget is required</p>}
-                    </div>
-                    <div className="w-1/2 ml-2">
+                <div>
+                    
+                    <div >
                         <label htmlFor="projectStartDate" className="block font-medium">Project Start Date</label>
                         <input
                             type="date"

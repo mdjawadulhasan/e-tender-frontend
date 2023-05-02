@@ -7,15 +7,13 @@ import { useRouter } from "next/router";
 export default function UserProfile({ data }) {
   const router = useRouter();
 
-  // Extract the Tender Name from the first item in the data array
   const tenderName = data[0]?.Tendername;
 
-  const handleApprove = async (tenderId, agencyId) => {
+  const handleApprove = async (tenderId, agencyId, bid) => {
     try {
       const response = await axios.get(
-        `http://localhost:3000/Tenders/Approvebid/${tenderId}/${agencyId}`
+        `http://localhost:3000/Tenders/Approvebid/${tenderId}/${agencyId}/${bid}`
       );
-      
       console.log(response.data);
       alert("Bid Approved Successfully");
       router.push("/tender-manager/tender/auction");
@@ -24,9 +22,10 @@ export default function UserProfile({ data }) {
     }
   };
 
+
   return (
     <>
-      <MyLayout title="View Auction" /> 
+      <MyLayout title="View Auction" />
       <SideLayout />
       <h1 className="text-center bg-gray-200 py-2 mt-20">
         Tender Name : {tenderName}
@@ -61,12 +60,13 @@ export default function UserProfile({ data }) {
                     <td className="border px-4 py-2">
                       <button
                         onClick={() =>
-                          handleApprove(item.id, auction.Agency.id)
+                          handleApprove(item.id, auction.Agency.id, auction.Bid)
                         }
                         className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 rounded"
                       >
                         Approve
                       </button>
+
                     </td>
                   </>
                 ) : (
