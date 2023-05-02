@@ -29,7 +29,11 @@ export default function SignIn() {
       }
 
     } catch (error) {
-      setError("Invalid login Credentials", error)
+      Swal.fire({
+        icon: 'error',
+        title: 'Wrong Credentials',
+        text: 'Try again'
+      })
     }
   }
 

@@ -30,7 +30,7 @@ export default function MyLayout(props) {
         </div>
         <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto" >
           <div className="text-sm lg:flex-grow" >
-            <Link href="/admin/Dashboard" className="block mt-4 lg:inline-block lg:mt-0 hover:bg-gray-100 mr-4" >
+            <Link href="/admin" className="block mt-4 lg:inline-block lg:mt-0 hover:bg-gray-100 mr-4" >
               Home
             </Link>
             <Link href="/admin/profile" className="block mt-4 lg:inline-block lg:mt-0 hover:bg-gray-100 mr-4">

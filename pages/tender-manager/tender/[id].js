@@ -15,6 +15,8 @@ export default function TenderView({ data }) {
 
   const user = useAuth();
 
+  
+
 
   const [success, setSuccess] = useState('')
   const onSubmit = async (data) => {
