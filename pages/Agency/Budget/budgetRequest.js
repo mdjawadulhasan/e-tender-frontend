@@ -18,6 +18,9 @@ export default function GetUsers() {
         );
         const data = await response.data;
         setData(data);
+        // data.map((item) =>
+        // console.log(item.tenders.map((tender) => tender.Tendername))
+        // );
       } else {
         console.log("null");
       }
@@ -25,6 +28,18 @@ export default function GetUsers() {
     fetchData();
   }, [user]);
   console.log(data);
+  const tenders = data.map((item) =>
+    item.tenders.map((tender) => {
+      return {
+        Tendername: tender.Tendername,
+        Tenderlocation: tender.Projectlocation,
+        id: tender.id,
+        // add more properties here as needed
+      };
+    })
+  );
+
+  console.log(tenders);
 
   return (
     <>
@@ -38,25 +53,36 @@ export default function GetUsers() {
           <thead className="bg-gray-200">
             <tr>
               <th className="border py-3 px-8 text-lg">Tender Name</th>
-              {/* <th className="border py-3 px-8 text-lg">Bid</th> */}
+              <th className="border py-3 px-8 text-lg">Location</th>
+              <th className="border py-3 px-8 text-lg">Previous Budget</th>
+              <th className="border py-3 px-8 text-lg">Budget Request</th>
             </tr>
           </thead>
           <tbody>
-            {data.map((item) => (
-              <tr key={item.id} className="bg-white">
-                <td className="border py-3 px-4 text-lg bg-orange-50">
-                  {item.Tendername}
-                </td>
+            {data.map((item) =>
+              item.tenders.map((tender) => (
+                <tr key={tender.id} className="bg-white">
+                  <td className="border py-3 px-4 text-lg bg-orange-50">
+                    {tender.Tendername}
+                  </td>
 
-                {/* <td className="border py-3 px-4 text-lg"> */}
-                {/* <Link href={`/Agency/tender/${item.id}`}> */}
-                {/* <h1 className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition-colors duration-300 ease-in-out"> */}
-                {/* Create */}
-                {/* </h1> */}
-                {/* </Link> */}
-                {/* </td> */}
-              </tr>
-            ))}
+                  <td className="border py-3 px-4 text-lg bg-orange-50">
+                    {tender.Projectlocation}
+                  </td>
+                  <td className="border py-3 px-4 text-lg bg-orange-50">
+                    {tender.Tenderbudget}
+                  </td>
+
+                  <td className="border py-3 px-4 text-lg">
+                    <Link href={`/Agency/Budget/${tender.id}`}>
+                      <h1 className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition-colors duration-300 ease-in-out">
+                        Create
+                      </h1>
+                    </Link>
+                  </td>
+                </tr>
+              ))
+            )}
           </tbody>
         </table>
       </div>
