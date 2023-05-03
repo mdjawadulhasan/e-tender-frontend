@@ -97,8 +97,7 @@ export default function UpdateProfile() {
                 </div>
 
 
-                <div>
-                  
+                <div>                 
                     <input
                         type="hidden"
                         id="email"
