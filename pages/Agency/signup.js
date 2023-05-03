@@ -33,6 +33,7 @@ export default function SignUp() {
     const formData = new FormData();
     formData.append("AgencyName", data.AgencyName);
     formData.append("Email", data.Email);
+    
     formData.append("password", data.password);
     formData.append("file", data.file[0]);
     console.log(formData);

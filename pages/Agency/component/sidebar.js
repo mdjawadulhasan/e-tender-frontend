@@ -38,6 +38,7 @@ export default function SideLayout(props) {
 
                 <span class="ml-1 text-lg  font-bold ">Agency</span>
               </a>
+
               {showAgency && (
                 <ul class="space-y-2 font-medium ml-6">
                   <li>
@@ -133,7 +134,7 @@ export default function SideLayout(props) {
                   </li>
                   <li>
                     <a
-                      href="Agency/alltender"
+                      href="Agency/tender/alltender"
                       class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-green-500"
                     >
                       <img

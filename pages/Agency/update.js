@@ -21,6 +21,8 @@ export default function UpdateProfile() {
     const form = {
       AgencyName: data.AgencyName,
       Email: data.Email,
+      Ratings: data.Ratings,
+      Status: data.Status,
       password: user.password,
       ImgfileName: user.ImgfileName,
       id: user.id,
@@ -64,6 +66,37 @@ export default function UpdateProfile() {
             <p className="text-red-500">Name is required</p>
           )}
         </div>
+
+        <div>
+          <label htmlFor="Status" className="block font-medium">
+            Status
+          </label>
+          <input
+            type="text"
+            id="Status"
+            className="w-full border border-gray-400 p-2 rounded-md"
+            {...register("Status", { required: true })}
+            defaultValue={user.Status}
+          />
+          {errors.Status && <p className="text-red-500">Status is required</p>}
+        </div>
+
+        <div>
+          <label htmlFor="Ratings" className="block font-medium">
+            Status
+          </label>
+          <input
+            type="text"
+            id="Ratings"
+            className="w-full border border-gray-400 p-2 rounded-md"
+            {...register("Ratings", { required: true })}
+            defaultValue={user.Ratings}
+          />
+          {errors.Ratings && (
+            <p className="text-red-500">Ratings is required</p>
+          )}
+        </div>
+
         <div>
           <label htmlFor="Email" className="block font-medium">
             Email

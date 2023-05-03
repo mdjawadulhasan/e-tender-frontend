@@ -34,7 +34,7 @@ export default function GetUsers() {
         Tendername: tender.Tendername,
         Tenderlocation: tender.Projectlocation,
         id: tender.id,
-        // add more properties here as needed
+       
       };
     })
   );
