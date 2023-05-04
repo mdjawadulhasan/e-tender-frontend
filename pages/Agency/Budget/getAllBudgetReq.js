@@ -15,10 +15,17 @@ export default function GetUsers() {
   // router.push(`/Agency/Budget/updateBudgetReq`);
   //   };
 
-  const handleUpdateClick = (id) => {
+  // const handleUpdateClick = (id) => {
+  // router.push({
+  // pathname: `/Agency/Budget/updateBudgetReq`,
+  // query: { id: id },
+  // });
+  // };
+
+  const handleUpdateClick = (id, tenderName) => {
     router.push({
       pathname: `/Agency/Budget/updateBudgetReq`,
-      query: { id: id },
+      query: { id: id, tenderName: tenderName },
     });
   };
 
@@ -103,6 +110,7 @@ export default function GetUsers() {
               </th>
               <th className="border py-3 px-8 text-lg">Location</th>
               <th className="border py-3 px-8 text-lg">Previous Request</th>
+              <th className="border py-3 px-8 text-lg">Previous Cause </th>
               <th className="border py-3 px-8 text-lg">Edit</th>
               <th className="border py-3 px-8 text-lg">Delete</th>
             </tr>
@@ -118,13 +126,18 @@ export default function GetUsers() {
                     {item.Tender.Projectlocation}
                   </td>
                   <td className="border py-3 px-4 text-lg bg-orange-200">
-                    {item.Amount}
+                    {item.Amount + `💲`}
+                  </td>
+                  <td className="border py-3 px-4 text-lg bg-orange-200">
+                    {item.Cause}
                   </td>
 
                   <td className="border py-3 px-4 text-lg">
                     <h1
                       className="px-4 py-2 bg-green-500 text-white rounded-full cursor-pointer hover:bg-green-600"
-                      onClick={() => handleUpdateClick(item.id)}
+                      onClick={() =>
+                        handleUpdateClick(item.id, item.Tender.Tendername)
+                      }
                     >
                       Edit
                     </h1>

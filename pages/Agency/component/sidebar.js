@@ -20,7 +20,7 @@ export default function SideLayout(props) {
 
       <aside
         id="default-sidebar"
-        class=" fixed top-16 left-0 z-40 w-44 h-screen transition-transform -translate-x-full sm:translate-x-0 shadow-md -0  bg-gray-200"
+        class=" fixed top-16 left-0 z-40 w-44 h-screen transition-transform -translate-x-full sm:translate-x-0 shadow-md -0  bg-white"
       >
         <div class="h-full px-3 py-4 overflow-y-auto mt-4   font-bold ">
           <ul class="space-y-2 font-medium font-bold">
@@ -43,7 +43,7 @@ export default function SideLayout(props) {
                 <ul class="space-y-2 font-medium ml-6">
                   <li>
                     <a
-                      href="Agency/signup"
+                      href="/Agency/signup"
                       class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-green-500"
                     >
                       <img
@@ -57,7 +57,7 @@ export default function SideLayout(props) {
 
                   <li>
                     <a
-                      href="Agency/allAgency"
+                      href="/Agency/allAgency"
                       class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-green-500"
                     >
                       <img
@@ -71,7 +71,7 @@ export default function SideLayout(props) {
 
                   <li>
                     <a
-                      href="Agency/searchAgency"
+                      href="/Agency/searchAgency"
                       class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-green-500"
                     >
                       <img
@@ -85,7 +85,7 @@ export default function SideLayout(props) {
 
                   <li>
                     <a
-                      href="Agency/sendEmail"
+                      href="/Agency/sendEmail"
                       class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-green-500"
                     >
                       <img
@@ -121,7 +121,7 @@ export default function SideLayout(props) {
                 <ul class="space-y-2 font-medium ml-6">
                   <li>
                     <a
-                      href="Agency/tender/getalltender"
+                      href="/Agency/tender/getalltender"
                       class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-green-500"
                     >
                       <img
@@ -134,7 +134,7 @@ export default function SideLayout(props) {
                   </li>
                   <li>
                     <a
-                      href="Agency/tender/alltender"
+                      href="/Agency/tender/alltender"
                       class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-green-500"
                     >
                       <img
@@ -148,11 +148,11 @@ export default function SideLayout(props) {
 
                   <li>
                     <a
-                      href="Agency/Budget/budgetRequest"
+                      href="/Agency/Budget/budgetRequest"
                       class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-green-500"
                     >
                       <img
-                        src="/all.png"
+                        src="/money.png"
                         alt="search icon"
                         class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black"
                       />

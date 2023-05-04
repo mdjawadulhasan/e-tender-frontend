@@ -15,17 +15,17 @@ export default function MyLayout(props) {
         <div className="flex items-center flex-shrink-0 mr-6">
           <Image src="/headerlogo.png" alt="me" width="164" height="100" />
         </div>
-        <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-          <div className="text-lg lg:flex-grow">
+        <div className="flex-grow w-auto md:mr-20">
+          <div className="text-lg flex-grow flex justify-end">
             <Link
               href="/Agency"
-              className="block mt-10 ml-10 lg:inline-block lg:mt-0 hover:bg-gray-100 mr-4 text-lg mr-10"
+              className=" ml-10 inline-block mt-2 hover:bg-gray-100 text-lg mr-10"
             >
               Home
             </Link>
             <Link
               href="/Agency/profile"
-              className="block mt-4 lg:inline-block lg:mt-0 hover:bg-gray-100 mr-4"
+              className="mt-2 inline-block hover:bg-gray-100 mr-4"
             >
               Profile
             </Link>

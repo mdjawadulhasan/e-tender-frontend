@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function UserLayout({ data }) {
   console.log(data);
   return (
-    <div className="bg-white shadow-md rounded-lg px-10 py-6 mb-8 bg-green-400">
+    <div className="bg-green-400 shadow-md rounded-lg px-10 py-6 mb-8 bg-green-400">
       <h2 className="text-2xl font-bold text-gray-800">{data.name}</h2>
       <h4 className=" text-lg">{data.Email}</h4>
       {/* <h4 className=" text-lg">{data.Noprojectcomleted}</h4> */}

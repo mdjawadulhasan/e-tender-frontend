@@ -30,8 +30,8 @@ export default function GetUsers() {
 
   return (
     <>
-      <div className="bg-white-50 min-h-screen mt-8">
-        {/* <MyLayout title="Profile" /> */}
+      <div className="bg-gray-900 min-h-screen mt-8">
+        <MyLayout title="Profile" />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-4">My Profile</h1>
@@ -39,10 +39,10 @@ export default function GetUsers() {
           {userData ? <UserLayout data={userData} /> : <p>Loading...</p>}
 
           <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            className="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             onClick={handleUpdateClick}
           >
-            Update
+            Edit
           </button>
 
           <button
