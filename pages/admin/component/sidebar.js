@@ -22,13 +22,15 @@ export default function SideLayout(props) {
                                 <span class="ml-3">Create Magister</span>
                             </a>
                         </li>
-                        {/*
+                       
                         <li>
-                            <a href="/tender-manager/tender/available" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
+                            <a href="/admin/tender/available" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
                                 <img src="/avl.png" alt="search icon" class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black" />
-                                <span class="ml-3">Available</span>
+                                <span class="ml-3">Tenders</span>
                             </a>
                         </li>
+
+                         {/*
                         <li>
                             <a href="/tender-manager/tender/assigned" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
                                 <img src="/asgnd.png" alt="search icon" class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black" />

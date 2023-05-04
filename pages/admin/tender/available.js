@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Link from "next/link";
-import MyLayout from "@/pages/tender-manager/component/layout";
+import MyLayout from "@/pages/admin/component/layout";
 import axios from "axios";
 import SideLayout from "../component/sidebar";
 
@@ -15,7 +15,7 @@ export default function GetUsers({ data }) {
       return;
     }
     const response = await axios.get(
-      `http://localhost:3000/tenders/available/search-by-name/${searchTerm}`
+      `http://localhost:3000/tenders/search-by-name/${searchTerm}`
     );
     const data = await response.data;
     setSearchResults(data);
@@ -58,7 +58,7 @@ export default function GetUsers({ data }) {
               <tr key={item.id} className="bg-white">
                 <td className="border py-2 px-4">{item.Tendername}</td>
                 <td className="border py-2 px-4">
-                  <Link href={"/tender-manager/tender/" + item.id}>
+                  <Link href={"/admin/tender/" + item.id}>
                     View Details
                   </Link>
                 </td>
@@ -72,7 +72,7 @@ export default function GetUsers({ data }) {
 }
 
 export async function getServerSideProps() {
-  const response = await axios.get("http://localhost:3000/tenders/Available");
+  const response = await axios.get("http://localhost:3000/tenders/all");
   const data = await response.data;
   return { props: { data } };
 }
