@@ -20,7 +20,7 @@ export default function GetUsers({ data }) {
     const data = await response.data;
     setSearchResults(data);
   };
-  
+
 
   const tenderData = searchResults.length > 0 ? searchResults : data;
 
