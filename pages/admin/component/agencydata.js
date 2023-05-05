@@ -7,7 +7,7 @@ export default function AgencyLayout({ data }) {
         <h3 className="text-lg leading-6 font-medium text-gray-900">{data.AgencyName}</h3>
         <p className="mt-1 max-w-2xl text-sm text-gray-500">{data.Email}</p>
         <p className="mt-1 max-w-2xl text-sm text-gray-500">
-          {data.Status === 1 ? "Active" : "blocked"}
+          {data.Status === 1 ? "Active" : "Blocked"}
         </p>
       </div>
       <div className="border-t border-gray-200 px-4 py-5 sm:p-0">
