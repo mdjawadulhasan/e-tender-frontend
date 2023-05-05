@@ -1,7 +1,19 @@
 import Header from "./header";
 import SessionCheck from "./sessioncheck";
+import React, { useState } from "react";
 
 export default function SideLayout(props) {
+
+    const [showMagister, setShowMagister] = useState(false);
+    const [showTender, setShowTender] = useState(false);
+
+    const handleMagisterClick = () => {
+        setShowMagister(!showMagister);
+    };
+
+    const handleTenderClick = () => {
+        setShowTender(!showTender);
+    };
     return (
         <>
             <SessionCheck />
@@ -9,46 +21,90 @@ export default function SideLayout(props) {
                 <div class="h-full px-3 py-4 overflow-y-auto">
                     <ul class="space-y-2 font-medium">
                         <li>
-                            <a href="/admin/magister/viewall" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
-                                <img src="/all.png" alt="search icon" class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black" />
-                                <span class="ml-3">Magister</span>
+                            <a
+                                href="#"
+                                class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100"
+                                onClick={handleMagisterClick}
+                            >
+                                <img
+                                    src="/mgst.png"
+                                    alt="agency icon"
+                                    class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black"
+                                />
+                                <span class="ml-1">Magister</span>
                             </a>
+                            {showMagister && (
+                                <ul class="space-y-2 font-medium ml-6">
+                                    <li>
+                                        <a
+                                            href="/admin/magister/create"
+                                            class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100"
+                                        >
+                                            <img
+                                                src="/create-svgrepo-com.png"
+                                                alt="search icon"
+                                                class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black"
+                                            />
+                                            <span class="ml-3">Create Magister</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a
+                                            href="/admin/magister/viewall"
+                                            class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100"
+                                        >
+                                            <img
+                                                src="/all.png"
+                                                alt="search icon"
+                                                class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black"
+                                            />
+                                            <span class="ml-3">View All</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            )}
                         </li>
+                    </ul>
 
 
-                        <li>
-                            <a href="/admin/magister/create" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
-                                <img src="/create-svgrepo-com.png" alt="search icon" class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black" />
-                                <span class="ml-3">Create Magister</span>
-                            </a>
-                        </li>
-                       
-                        <li>
-                            <a href="/admin/tender/available" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
-                                <img src="/money.png" alt="search icon" class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black" />
-                                <span class="ml-3">Tenders</span>
-                            </a>
-                        </li>
 
-                         {/*
+
+
+                    <ul class="space-y-2 font-medium">
                         <li>
-                            <a href="/tender-manager/tender/assigned" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
-                                <img src="/asgnd.png" alt="search icon" class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black" />
-                                <span class="ml-3">Assigned</span>
+                            <a
+                                href="#"
+                                class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100"
+                                onClick={handleTenderClick}
+                            >
+                                <img
+                                    src="/money.png"
+                                    alt="agency icon"
+                                    class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black"
+                                />
+                                <span class="ml-1">Tender</span>
                             </a>
+                            {showTender && (
+                                <ul class="space-y-2 font-medium ml-6">
+                                    <li>
+                                        <a
+                                            href="/admin/tender/available"
+                                            class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100"
+                                        >
+                                            <img
+                                                src="/all.png"
+                                                alt="search icon"
+                                                class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black"
+                                            />
+                                            <span class="ml-3">View All</span>
+                                        </a>
+                                    </li>
+
+
+                                    
+                                </ul>
+                            )}
                         </li>
-                        <li>
-                            <a href="/tender-manager/tender/blocked" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
-                                <img src="/blocked.png" alt="search icon" class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black" />
-                                <span class="ml-3">Blocked</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/tender-manager/tender/completed" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
-                                <img src="/cmplt.png" alt="search icon" class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black" />
-                                <span class="ml-3">Completed</span>
-                            </a>
-                        </li> */}
                     </ul>
                 </div>
             </aside>}

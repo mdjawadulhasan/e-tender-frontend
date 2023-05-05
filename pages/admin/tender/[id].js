@@ -1,10 +1,17 @@
-import { useRouter } from 'next/router'
+import { useRouter,useState } from 'next/router'
 import axios from 'axios'
 import MyLayout from '../component/layout'
 import SideLayout from '../component/sidebar'
 import Swal from 'sweetalert2'
 
 export default function ViewTender({ data }) {
+
+  const [showTender, setShowTender] = useState(false);
+  const handleTenderClick = () => {
+    setShowTender(!showTender);
+  };
+
+  
   const router = useRouter()
 
   const tendermanagerName = data.Tendermanager?.name || 'Not assigned yet'
