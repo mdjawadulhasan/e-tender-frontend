@@ -2,6 +2,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+import Swal from 'sweetalert2'
 
 export default function SignIn() {
   const [email, setEmail] = useState('')
@@ -21,11 +22,19 @@ export default function SignIn() {
         router.push("/tender-manager/validate");
       }
       else {
-        setError("Invalid login Credentials ")
+        Swal.fire({
+          icon: 'error',
+          title: 'Wrong Credentials',
+          text: 'Try again'
+        })
       }
 
     } catch (error) {
-      setError("Invalid login Credentials", error)
+      Swal.fire({
+        icon: 'error',
+        title: 'Wrong Credentials',
+        text: 'Try again'
+      })
     }
   }
 

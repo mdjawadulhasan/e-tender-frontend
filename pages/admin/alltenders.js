@@ -14,7 +14,6 @@ export default function AdminDashboard() {
   return (
     <>
       <MyLayout title="Dashboard" />
-   
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 mt-10">
         {tenders.map((tender) => (
           <div key={tender.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
