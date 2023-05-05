@@ -80,7 +80,7 @@ export default function ViewTender({ data }) {
             </div>
             <div>
               <h3 className="text-blue-500 font-medium">Status</h3>
-              <p className="mt-2">{data.Status === 1 ? 'Active' : 'Inactive'}</p>
+              <p className="mt-2">{data.Status === 0 ? 'Available' : 'Ongoing'}</p>
             </div>
             <div>
               <h3 className="text-blue-500 font-medium">Tender Manager</h3>
