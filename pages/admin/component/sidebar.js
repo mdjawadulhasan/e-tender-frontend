@@ -101,9 +101,16 @@ export default function SideLayout(props) {
                                     </li>
 
 
-                                    
+
                                 </ul>
                             )}
+                        </li>
+
+                        <li>
+                            <a href="/admin/tender-manager/viewall" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
+                                <img src="/mgst.png" alt="search icon" class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black" />
+                                <span class="ml-3">Tender Manager</span>
+                            </a>
                         </li>
                     </ul>
                 </div>

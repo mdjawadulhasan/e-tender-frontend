@@ -6,10 +6,6 @@ import Swal from 'sweetalert2'
 
 export default function ViewTender({ data }) {
 
-  const [showTender, setShowTender] = useState(false);
-  const handleTenderClick = () => {
-    setShowTender(!showTender);
-  };
 
   
   const router = useRouter()
@@ -45,7 +41,8 @@ export default function ViewTender({ data }) {
           <h1 className="text-2xl font-bold text-center">Tender Details</h1>
 
           <div className="flex justify-between items-center mt-8">
-            <h2 className="text-lg font-medium">{data.Tendername}</h2>
+          <h2 className="text-2xl font-medium text-green-900 dark:text-blue-900">{data.Tendername}</h2>
+
             <button
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
               onClick={onDelete}
@@ -56,39 +53,45 @@ export default function ViewTender({ data }) {
 
           <div className="grid grid-cols-2 gap-6 mt-8">
             <div>
-              <h3 className="text-gray-600 font-medium">Project Location</h3>
+          
+              <h3 className="text-blue-500 font-medium">Project Location</h3>
+
               <p className="mt-2">{data.Projectlocation}</p>
             </div>
             <div>
-              <h3 className="text-gray-600 font-medium">Tender Budget</h3>
+              <h3 className="text-blue-500 font-medium">Tender Budget</h3>
               <p className="mt-2">{data.Tenderbudget}</p>
             </div>
             <div>
-              <h3 className="text-gray-600 font-medium">Project Start Date</h3>
+              <h3 className="text-blue-500 font-medium">Project Start Date</h3>
               <p className="mt-2">{new Date(data.ProjectStartDate).toLocaleDateString()}</p>
             </div>
             <div>
-              <h3 className="text-gray-600 font-medium">Project Completion Date</h3>
+              <h3 className="text-blue-500 font-medium">Project Completion Date</h3>
               <p className="mt-2">{new Date(data.ProjectCmplttDate).toLocaleDateString()}</p>
             </div>
             <div>
-              <h3 className="text-gray-600 font-medium">Deadline</h3>
+              <h3 className="text-blue-500 font-medium">Deadline</h3>
               <p className="mt-2">{new Date(data.Deadline).toLocaleDateString()}</p>
             </div>
             <div>
-              <h3 className="text-gray-600 font-medium">Completion Percentage</h3>
+              <h3 className="text-blue-500 font-medium">Completion Percentage</h3>
               <p className="mt-2">{data.Cmpltpercentege}%</p>
             </div>
             <div>
-              <h3 className="text-gray-600 font-medium">Status</h3>
+              <h3 className="text-blue-500 font-medium">Status</h3>
               <p className="mt-2">{data.Status === 1 ? 'Active' : 'Inactive'}</p>
             </div>
             <div>
-              <h3 className="text-gray-600 font-medium">Tender Manager</h3>
-              <p className="mt-2">{tendermanagerName}</p>
+              <h3 className="text-blue-500 font-medium">Tender Manager</h3>
+              <p className="mt-2 text-blue-500">
+                <a href={`/admin/tender-manager/${data.Tendermanager?.id}`}>
+                  {tendermanagerName}
+                </a>
+              </p>
             </div>
             <div>
-              <h3 className="text-gray-600 font-medium">Agency</h3>
+              <h3 className="text-blue-500 font-medium">Agency</h3>
               <p className="mt-2">{agencyName}</p>
             </div>
           </div>

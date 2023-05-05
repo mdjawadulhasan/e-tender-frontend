@@ -50,13 +50,20 @@ export default function GetUsers({ data }) {
           <thead>
             <tr className="bg-gray-200">
               <th className="border py-2 px-4">Tender Name</th>
+              <th className="border py-2 px-4">Status</th>
               <th className="border py-2 px-4">View Details</th>
+            
             </tr>
           </thead>
           <tbody>
             {tenderData.map((item) => (
               <tr key={item.id} className="bg-white">
                 <td className="border py-2 px-4">{item.Tendername}</td>
+                <td className="border py-2 px-4">
+                  {item.Status === 0 && "Available"}
+                  {item.Status === 1 && "Ongoing"}
+                  {item.Status === 3 && "Completed"}
+                </td>
                 <td className="border py-2 px-4">
                   <Link href={"/admin/tender/" + item.id}>
                     View Details
