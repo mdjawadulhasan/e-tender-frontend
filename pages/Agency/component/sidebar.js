@@ -5,6 +5,7 @@ export default function SideLayout(props) {
   const [showAgency, setShowAgency] = useState(false);
 
   const [showTender, setShowTender] = useState(false);
+  const [showBudget, setShowBudget] = useState(false);
 
   const handleAgencyClick = () => {
     setShowAgency(!showAgency);
@@ -14,6 +15,9 @@ export default function SideLayout(props) {
     setShowTender(!showTender);
   };
 
+  const handleBudgetClick = () => {
+    setShowBudget(!showBudget);
+  };
   return (
     <>
       <SessionCheck />
@@ -146,7 +150,7 @@ export default function SideLayout(props) {
                     </a>
                   </li>
 
-                  <li>
+                  {/*  <li>
                     <a
                       href="/Agency/Budget/budgetRequest"
                       class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-green-500"
@@ -157,6 +161,55 @@ export default function SideLayout(props) {
                         class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black"
                       />
                       <span class="ml-3">Budget</span>
+                    </a>
+              </li>*/}
+                </ul>
+              )}
+            </li>
+          </ul>
+
+          {/* for Budget  */}
+
+          <ul class="space-y-2 font-medium mt-8">
+            <li>
+              <a
+                href="#"
+                class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-green-500"
+                onClick={handleBudgetClick}
+              >
+                <img
+                  src="/save-money.png"
+                  alt="agency icon"
+                  class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black"
+                />
+                <span class="ml-1  text-lg font-bold">Budget</span>
+              </a>
+              {showBudget && (
+                <ul class="space-y-2 font-medium ml-6">
+                  <li>
+                    <a
+                      href="/Agency/Budget/budgetRequest"
+                      class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-green-500"
+                    >
+                      <img
+                        src="/create-svgrepo-com.png"
+                        alt="search icon"
+                        class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black"
+                      />
+                      <span class="ml-3">Create </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/Agency/Budget/getAllBudgetReq"
+                      class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-green-500"
+                    >
+                      <img
+                        src="/money.png"
+                        alt="search icon"
+                        class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-black"
+                      />
+                      <span class="ml-3">My Request</span>
                     </a>
                   </li>
                 </ul>

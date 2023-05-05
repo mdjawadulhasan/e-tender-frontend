@@ -3,7 +3,54 @@ import MyLayout from "@/pages/Agency/component/layout";
 import axios from "axios";
 import SideLayout from "../component/sidebar";
 
+import { useAuth } from "../useAuth";
+import { useEffect, useState } from "react";
+
 export default function GetUsers({ data }) {
+  const user = useAuth();
+  console.log(user);
+
+  const [UserData, setUserData] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      if (user != null) {
+        console.log(user.id);
+        const response = await axios.get(
+          "http://localhost:3000/Agency/BudgetReqByAgency/" + user.id
+        );
+        const UserData = await response.data;
+
+        // Iterate through each budget request and update the latest budget request for each tender ID
+
+        setUserData(UserData);
+        // const id = [...data];
+        // data.map((item) =>
+        // console.log(item.tenders.map((tender) => tender.Tendername))
+        // );
+      } else {
+        console.log("null");
+      }
+    }
+    fetchData();
+  }, [user]);
+  console.log(UserData);
+
+  const tenderid = UserData.map((item) => Number(item.Tender.id));
+  console.log(tenderid);
+
+  const tenders = data.map((item) => {
+    return {
+      Tendername: item.Tendername,
+      Tenderlocation: item.Projectlocation,
+      id: item.id,
+    };
+  });
+
+  console.log(tenders);
+  const ids = tenders.map((item) => item.id);
+  console.log(ids);
+
   return (
     <>
       <MyLayout title="View Tenders" />
@@ -26,11 +73,19 @@ export default function GetUsers({ data }) {
                   {item.Tendername}
                 </td>
                 <td className="border py-3 px-4 text-lg">
-                  <Link href={`/Agency/tender/${item.id}`}>
-                    <h1 className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition-colors duration-300 ease-in-out">
-                      Create
-                    </h1>
-                  </Link>
+                  {tenderid.includes(item.id) ? (
+                    <Link href={`/Agency/Bid//${item.id}`}>
+                      <h1 className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition-colors duration-300 ease-in-out">
+                        Already Create
+                      </h1>
+                    </Link>
+                  ) : (
+                    <Link href={`/Agency/tender/${item.id}`}>
+                      <h1 className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition-colors duration-300 ease-in-out">
+                        Create
+                      </h1>
+                    </Link>
+                  )}
                 </td>
               </tr>
             ))}

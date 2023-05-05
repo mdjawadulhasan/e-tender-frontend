@@ -92,6 +92,7 @@ export default function GetUsers() {
     }
     fetchData();
   }, [user]);
+  
   console.log(data);
 
   return (
