@@ -18,7 +18,7 @@ export default function SideLayout(props) {
     <>
       <SessionCheck />
 
-      {/* <aside
+      <aside
         id="default-sidebar"
         class="fixed top-20 left-0 z-40 w-44 h-screen transition-transform -translate-x-full sm:translate-x-0 bg-white shadow-md"
       >
@@ -99,8 +99,6 @@ export default function SideLayout(props) {
               )}
             </li>
           </ul>
- 
-         
 
           <ul class="space-y-2 font-medium">
             <li>
@@ -149,7 +147,7 @@ export default function SideLayout(props) {
             </li>
           </ul>
         </div>
-      </aside> */}
+      </aside>
     </>
   );
 }

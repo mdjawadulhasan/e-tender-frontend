@@ -30,6 +30,7 @@ export default function GetUsers() {
 
   return (
     <>
+      <SideLayout />
       <div className="bg-gray-900 min-h-screen mt-8">
         <MyLayout title="Profile" />
 
