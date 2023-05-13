@@ -16,10 +16,12 @@ export default function TenderView({ data }) {
   const user = useAuth();
 
 
+
+
   const [success, setSuccess] = useState('')
   const onSubmit = async (data) => {
 
-    console.log(data);
+
     const form = {
       Tendername: data.name,
       Projectlocation: data.projectLocation,
@@ -38,7 +40,7 @@ export default function TenderView({ data }) {
     };
 
 
-    console.log("all: ", form);
+
     try {
       const response = await axios.put(`http://localhost:3000/Tenders/update`, form);
       router.push('/tender-manager/tender/getalltender')
@@ -48,6 +50,15 @@ export default function TenderView({ data }) {
     }
   };
 
+
+  const onDelete = async () => {
+    try {
+      const response = await axios.delete(`http://localhost:3000/Tenders/delete/${data.id}`);
+      router.push('/tender-manager/tender/getalltender')
+    } catch (error) {
+      setSuccess('Delete unsuccessful ' + error.response.data.message);
+    }
+  };
 
   return (
     <>
@@ -153,6 +164,7 @@ export default function TenderView({ data }) {
               className="w-full border border-gray-400 p-2 rounded-md"
               {...register('tenderBudget', { required: true })}
               defaultValue={data.Tenderbudget}
+              readOnly
             />
             {errors.tenderBudget && <p className="text-red-500">Tender Budget is required</p>}
           </div>
@@ -206,7 +218,18 @@ export default function TenderView({ data }) {
         >
           Update
         </button>
+
+        <button
+          onClick={onDelete}
+          className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2"
+        >
+          Delete Tender
+        </button>
       </form>
+
+
+
+
     </>
   );
 }

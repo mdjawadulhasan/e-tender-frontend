@@ -1,18 +1,14 @@
-import { useAuth } from './useAuth';
-import MyLayout from '@/pages/tender-manager/component/layout';
-import UserLayout from './component/userdata';
 import router from 'next/router';
-import SideLayout from '@/pages/tender-manager/component/sidebar';
 import Swal from 'sweetalert2'
+import SideLayout from '@/pages/admin/component/sidebar';
+import MyLayout from '@/pages/admin/component/layout';
+import axios from 'axios';
+import MagisterLayout from '../component/magisterdata';
 
+export default function GetUsers({ data }) {
+  const userData = data;
 
-export default function GetUsers() {
-  const userData = useAuth();
-  console.log(userData);
-
-  const handleUpdateClick = () => {
-    router.push(`/tender-manager/update`);
-  };
+  
 
   const handleDeleteClick = () => {
     fetch(`http://localhost:3000/TenderManager/delete/${userData.id}`, {
@@ -30,11 +26,11 @@ export default function GetUsers() {
         } else {
           Swal.fire(
             'Deleted!',
-            'Sign in to Access !',
+            '',
             'success'
           )
 
-          router.push("/tender-manager/signin");
+          router.push("/admin/tender-manager/viewall");
         }
       })
       .catch(error => console.log(error)); // handle the error
@@ -50,16 +46,10 @@ export default function GetUsers() {
       <MyLayout title="Profile" />
       <SideLayout />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {userData ? <UserLayout data={userData} /> : <p>Loading...</p>}
+        {userData ? <MagisterLayout data={userData} /> : <p>Loading...</p>}
 
 
         <div className="flex justify-between mb-4">
-          <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
-            onClick={handleUpdateClick}
-          >
-            Update
-          </button>
           <button
             className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
             onClick={handleDeleteClick}
@@ -72,4 +62,15 @@ export default function GetUsers() {
 
     </div>
   );
+}
+
+
+export async function getServerSideProps(context) {
+  const id = context.params.id;
+  const response = await axios.get(
+    "http://localhost:3000/TenderManager/viewprofile/" + id
+  );
+  const exdata = await response.data;
+
+  return { props: { data: exdata } };
 }
