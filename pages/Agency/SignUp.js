@@ -57,8 +57,8 @@ export default function SignUp() {
   <br></br>;
   return (
     <>
-      <SideLayout />
-      <MyLayout />
+      {/* <SideLayout /> */}
+      {/* <MyLayout /> */}
       <Head>
         <title>Sign Up</title>
         <link rel="icon" type="image/x-icon" href="/logo.png"></link>

@@ -30,7 +30,7 @@ export default function TenderView({ data }) {
       Agency: user.id,
       Tender: data.id,
     };
-   // console.log(`Agency id is ${bidData.AgencyId}`);
+    // console.log(`Agency id is ${bidData.AgencyId}`);
     //console.log(`tender id is ${bidData.TenderId}`);
     try {
       const response = await axios.post(
@@ -116,13 +116,16 @@ export default function TenderView({ data }) {
               >
                 Create Bid
               </button>
+
+              <button
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                onClick={() => router.push("/Agency/tender/getalltender")}
+              >
+                Back
+              </button>
             </div>
           </form>
         </div>
-
-
-
-        
       </div>
     </>
   );

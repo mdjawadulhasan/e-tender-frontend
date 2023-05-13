@@ -136,7 +136,7 @@ export default function SideLayout(props) {
                       <span class="ml-3">Create Bid</span>
                     </a>
                   </li>
-                  <li>
+                {/*  <li>
                     <a
                       href="/Agency/tender/alltender"
                       class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-green-500"

@@ -3,8 +3,23 @@ import Link from "next/link";
 import Image from "next/image";
 import SessionCheck from "./sessioncheck";
 import SideLayout from "./sidebar";
-
+import { FiLogIn } from "react-icons/fi";
+import axios from "axios";
+import router from "next/router";
 export default function MyLayout(props) {
+  const handleSignOut = async (event) => {
+    console.log(event);
+    event.preventDefault();
+    try {
+      const response = await axios.get("http://localhost:3000/Agency/signout");
+      console.log(response.data);
+      sessionStorage.removeItem("Email");
+      router.push("/Agency/signin");
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <>
       <SessionCheck />
@@ -17,21 +32,22 @@ export default function MyLayout(props) {
         </div>
         <div className="flex-grow w-auto md:mr-20">
           <div className="text-lg flex-grow flex justify-end">
-            <Link
-              href="/Agency"
-              className=" ml-10 inline-block mt-2 hover:bg-gray-100 text-lg mr-10"
-            >
-              Home
-            </Link>
+            {/* <Link 
+              // href="/Agency/"
+              // className=" ml-10 inline-block mt-2 hover:bg-gray-100 text-lg mr-10"
+            // >
+              {/* Home */}
+            {/* </Link> */}
             <Link
               href="/Agency/profile"
-              className="mt-2 inline-block hover:bg-gray-100 mr-4"
+              className="mt-1 inline-block hover:bg-gray-100 mr-10"
             >
               Profile
             </Link>
-            {/* <Link href="/Agency/tender/getalltender" className="block mt-4 lg:inline-block lg:mt-0 hover:bg-gray-100 mr-4"> */}
-            {/* Tenders */}
-            {/* </Link> */}
+
+            <button onClick={handleSignOut}>
+              <FiLogIn className="w-8 h-8 text-gray-500 transition duration-75 group-hover:text-red" />
+            </button>
           </div>
         </div>
       </nav>

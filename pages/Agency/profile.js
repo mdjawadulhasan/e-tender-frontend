@@ -32,7 +32,7 @@ export default function GetUsers() {
   return (
     <>
       <SideLayout />
-      <div className="bg-gray-800 min-h-screen mt-8">
+      <div className="bg-white min-h-screen mt-8">
         <MyLayout title="Profile" />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

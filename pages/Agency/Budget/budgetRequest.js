@@ -48,15 +48,12 @@ export default function GetUsers() {
       <br />
       <br />
       <br />
-
       <div className="container mx-auto p-4">
         <div className="flex-grow flex justify-center items-center mt-20">
           <div className="w-3/4 sm:w-11/12 md:w-4/5 lg:w-3/4 xl:w-2/3 2xl:w-1/2">
             {data.map((item) => (
               <Card key={item.id} className="mb-6">
-                <Card.Header className="bg-white px-4 py-3 text-lg font-medium">
-                  {item.agency}
-                </Card.Header>
+                <Card.Header className="bg-white px-4 py-3 text-lg font-medium"></Card.Header>
                 <Card.Body>
                   {item.tenders.map((tender) => (
                     <Card key={tender.id} className="mb-6">
@@ -83,7 +80,7 @@ export default function GetUsers() {
                           </div>
                           <div className="item-left">
                             <Link href={`/Agency/Budget/${tender.id}`}>
-                              <button className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition-colors duration-300 ease-in-ou">
+                              <button className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition-colors duration-300 ease-in-out">
                                 Create Budget
                               </button>
                             </Link>
@@ -97,6 +94,11 @@ export default function GetUsers() {
             ))}
           </div>
         </div>{" "}
+        <Link href="/Agency/profile">
+          <button className=" ml-20  mb-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors duration-300 ease-in-out">
+            Back
+          </button>
+        </Link>
       </div>
     </>
   );

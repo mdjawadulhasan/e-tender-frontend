@@ -80,15 +80,13 @@ export default function GetUsers() {
         // Convert the object into an array of latest budget requests and set it as state
         const latestBudgetReqs = Object.values(latestBudgetReqByTender);
         setData(latestBudgetReqs);
-
-
       } else {
         console.log("null");
       }
     }
     fetchData();
   }, [user]);
-  
+
   console.log(data);
 
   return (
@@ -152,6 +150,13 @@ export default function GetUsers() {
             )}
           </tbody>
         </table>
+      </div>
+      <div className="flex justify-center items-center mt-10">
+        <Link href="/Agency/profile" passHref legacyBehavior>
+          <a className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Back
+          </a>
+        </Link>
       </div>
     </>
   );

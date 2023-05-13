@@ -16,6 +16,8 @@ export default function Home() {
   };
 
   return (
+
+    
     <div className="flex flex-col items-center justify-center h-screen bg-white">
       <div className="flex flex-col items-center justify-center py-16 bg-white w-full mt-6">
         <nav className="bg-white py-4 flex items-center justify-end px-8 pr-8 w-full absolute top-10 left-0">
@@ -33,12 +35,12 @@ export default function Home() {
 
         <br></br>
 
-        <img
-          src="./headerlogo.png"
-          alt="Tender Image"
-          className="w-100 h-20 object-contain absolute top-0 left-0 m-4"
-        />
-
+        {/* <img 
+          // src="../public/headerlogo.png"
+          // alt="Tender Image"
+          // className="w-100 h-20 object-contain absolute top-0 left-0 m-4"
+        // />
+*/}
         <h1 className="text-3xl font-bold mb-4">
           Welcome to E-Tender Application
         </h1>
