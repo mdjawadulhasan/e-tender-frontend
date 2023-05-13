@@ -2,6 +2,7 @@ import Link from "next/link";
 import MyLayout from "@/pages/Agency/component/layout";
 import axios from "axios";
 import SideLayout from "../component/sidebar";
+import { useHistory } from "react-router-dom";
 
 import { useAuth } from "../useAuth";
 import { useEffect, useState } from "react";
@@ -32,15 +33,21 @@ export default function GetUsers({ data }) {
     fetchData();
   }, [user]);
 
-  console.log(TenderData);
-
-  const feedback = data.map((item) => {
+  // console.log(TenderData.Tendername);
+  //
+  var tender;
+  const tenderdata = TenderData.map((item) => {
     return {
-      TenderId: item.id,
-      FeedbackText: item.FeedbackText,
-      Rating: item.Rating,
+      tender: item.Tendername,
     };
   });
+  console.log(tenderdata);
+
+  // const mergedData = TenderData.map((item) => {
+  // const feedbackItem = data.find((f) => f.TenderId === item.id);
+  // return { ...item, ...feedbackItem };
+  // });
+  // console.log(mergedData);
 
   const handleDeleteClick = (id) => {
     console.log(id);
@@ -69,6 +76,13 @@ export default function GetUsers({ data }) {
     }
   };
 
+ 
+ 
+ 
+ 
+ 
+ 
+
   return (
     <>
       <MyLayout title="View Tenders" />
@@ -80,46 +94,43 @@ export default function GetUsers({ data }) {
         <table className="w-3/4 sm:w-5/6 md:w-4/5 lg:w-3/4 xl:w-2/3 2xl:w-1/2 text-center text-sm font-light border-collapse">
           <thead className="bg-gray-200">
             <tr>
-              <th className="border py-3 px-8 text-lg">Tender Name</th>
-              <th className="border py-3 px-8 text-lg">FeedBack</th>
+              {/* <th className="border py-3 px-8 text-lg">Tender Name</th> */}
+              <th className="border py-3 px-8 text-lg">Feedback text</th>
               <th className="border py-3 px-8 text-lg">Rating</th>
-              <th className="border py-3 px-8 text-lg">Update</th>
-              <th className="border py-3 px-8 text-lg">Delete</th>
+              <th className="border py-3 px-8 text-lg">Edit</th>
+              <th className="border py-3 px-8 text-lg">Delite</th>
             </tr>
           </thead>
           <tbody>
-            {TenderData.map((item) => {
-              const tenderFeedback = feedback.find(
-                (f) => f.TenderId === item.id
-              );
+            {data.map((item) => (
+              <tr key={item.id} className="bg-white">
+                <td className="border py-3 px-4 text-lg bg-orange-50">
+                  {item.FeedbackText}
+                </td>
 
-              return (
-                <tr key={item.id} className="bg-white">
-                  <td className="border py-3 px-4 text-lg bg-white">
-                    {item.Tendername}
-                  </td>
-                  <td className="border py-3 px-4 text-lg bg-white">
-                    {tenderFeedback
-                      ? tenderFeedback.FeedbackText
-                      : "You Already give Feedback but you delete somehow"}
-                  </td>
-                  <td className="border py-3 px-4 text-lg">
-                    {tenderFeedback ? tenderFeedback.Rating : "0"}
-                  </td>
+                <td className="border py-3 px-4 text-lg bg-orange-50">
+                  {item.Rating}
+                </td>
 
-                  <td className="border py-3 px-4 text-lg"></td>
+                <td className="border py-3 px-4 text-lg">
+                  <h1
+                    className="px-4 py-2 bg-green-500 text-white rounded-full cursor-pointer hover:bg-green-600"
+                    onClick={() => handleUpdateClick(item.id)}
+                  >
+                    Edit
+                  </h1>
+                </td>
 
-                  <td className="border py-3 px-4 text-lg">
-                    <h1
-                      className="px-4 py-2 bg-red-500 text-white rounded-full cursor-pointer hover:bg-red-600"
-                      onClick={() => handleDeleteClick(item.id)}
-                    >
-                      Delete
-                    </h1>
-                  </td>
-                </tr>
-              );
-            })}
+                <td className="border py-3 px-4 text-lg">
+                  <h1
+                    className="px-4 py-2 bg-red-500 text-white rounded-full cursor-pointer hover:bg-red-600"
+                    onClick={() => handleDeleteClick(item.id)}
+                  >
+                    Delete
+                  </h1>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

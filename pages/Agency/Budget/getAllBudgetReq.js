@@ -81,11 +81,7 @@ export default function GetUsers() {
         const latestBudgetReqs = Object.values(latestBudgetReqByTender);
         setData(latestBudgetReqs);
 
-        // const id = [...data];
 
-        // data.map((item) =>
-        // console.log(item.tenders.map((tender) => tender.Tendername))
-        // );
       } else {
         console.log("null");
       }
